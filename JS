@@ -1,0 +1,30 @@
+$(document).ready(function() {
+  $("#quoteButton").click(function() { // This will bring up quote and change bg color on click
+
+    $.getJSON("http://api.forismatic.com/api/1.0/?method=getQuote&key=457653&format=jsonp&lang=en&jsonp=?", function(data) {
+      $("#quote").html(JSON.stringify(data.quoteText + "<br /> <br />" + "<small>" + data.quoteAuthor + "</small>"));
+
+    });
+    var colors = ["#ff0000", "#ff3300", "#800000", "#660066", "#2e2e1f", "#003300"];
+    var random = Math.floor(Math.random() * colors.length)
+    
+    $("body").fadeOut(500,function() {
+                     
+                      $("body").css("background-color", colors[random]).fadeIn(500);
+                      
+                      });
+    
+
+  });
+
+  $.getJSON("http://api.forismatic.com/api/1.0/?method=getQuote&key=457653&format=jsonp&lang=en&jsonp=?", function(data) {
+    $("#quote").html(JSON.stringify(data.quoteText + "<br /> <br />" + "<small>" + data.quoteAuthor + "</small>"));
+
+  });
+
+  $.getJSON("http://api.forismatic.com/api/1.0/?method=getQuote&key=457653&format=jsonp&lang=en&jsonp=?", function(data) {
+    $('a').attr("href", "https://twitter.com/intent/tweet?text=" + JSON.stringify(data.quoteText) + " " + data.quoteAuthor);
+
+  });
+
+});
