@@ -1,0 +1,26 @@
+body {
+  background-color: black;
+}
+
+#mainTitle {
+  color: white;
+}
+
+#mainBox {
+  background-color: white;
+  width: 500px;
+  height: auto;
+  border-radius: 0px;
+  margin-top: 50px;
+}
+
+#quoteButton {
+  margin-top: 20px;
+  margin-bottom: 20px;
+  font-size: 2em;
+  padding: 0 20px 0 20px;
+}
+
+#tweetText {
+  margin-bottom: 10px;
+}
